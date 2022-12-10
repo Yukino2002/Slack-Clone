@@ -1,8 +1,15 @@
 .sidebar {
+    flex: 0.3;
     background-color: var(--slack-color);
     border-top: 1px var(--slack-secondary-color) solid;
     color: #FFFFFF;
     max-width: 260px;
+}
+
+.sidebar > hr {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid var(--slack-secondary-color);
 }
 
 .sidebar-header {
