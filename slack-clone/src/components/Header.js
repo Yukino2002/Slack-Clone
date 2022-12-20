@@ -6,13 +6,18 @@ import { Avatar } from "@mui/material";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import SearchIcon from "@mui/icons-material/Search";
 import HelpOutIcon from "@mui/icons-material/HelpOutline";
+import { useStateValue } from './StateProvider';
 
 const Header = () => {
+    const [{ user }, dispatch] = useStateValue();
     return (
         <>
             <div className="header">
                 <div className="header-left">
-                    <Avatar className="header_avatar" alt="Pratik" src="" />
+                    <Avatar className="header_avatar"
+                        alt={user?.displayName}
+                        src={user?.photoURL}
+                    />
                     <AccessTimeIcon />
                 </div>
                 <div className="header-search">

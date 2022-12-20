@@ -6,7 +6,8 @@
 }
 
 .login-container {
-    padding: 120px;
+    width: 25vw;
+    padding: 100px;
     text-align: center;
     background-color: white;
     border-radius: 10px;

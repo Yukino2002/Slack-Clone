@@ -17,9 +17,11 @@ import AddIcon from "@mui/icons-material/Add";
 
 import SidebarOption from './SidebarOption';
 import db from '../config/Firebase';
+import { useStateValue } from './StateProvider';
 
 const Sidebar = () => {
     const [channels, setChannels] = useState([]);
+    const [{ user }, dispatch] = useStateValue();
 
     useEffect(() => {
         db.collection('channels').onSnapshot((snapshot) => (
@@ -42,7 +44,7 @@ const Sidebar = () => {
                         </h2>
                         <h3>
                             <FiberManualRecordIcon />
-                            Pratik Jallan
+                            {user?.displayName}
                         </h3>
                     </div>
                     <CreateIcon />
@@ -59,8 +61,8 @@ const Sidebar = () => {
                 <SidebarOption Icon={ExpandMoreIcon} title="Channels" />
                 <hr />
                 <SidebarOption Icon={AddIcon} title="Add Channel" id={"addChannel"} channelOption="addChannel"/>
-                {channels.map((channel) => (
-                    <SidebarOption Icon={null} title={channel.name} id={channel.id} channelOption={null} />
+                {channels.map((channel, index) => (
+                    <SidebarOption Icon={null} title={channel.name} id={channel.id} channelOption={null} key={index} />
                 ))}
             </div>
         </>

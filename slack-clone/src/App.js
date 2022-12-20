@@ -7,9 +7,10 @@ import Chat from './components/Chat';
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 import Login from './components/Login';
+import { useStateValue } from './components/StateProvider';
 
 function App() {
-  const [user, setUser] = useState(null);
+  const [{ user }, dispatch] = useStateValue();
 
   return (
     <>

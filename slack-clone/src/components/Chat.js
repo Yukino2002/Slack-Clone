@@ -4,9 +4,11 @@ import { useParams } from "react-router-dom";
 import Message from "./Message";
 import db from "../config/Firebase";
 import '../styles/chat.css';
+import ChatInput from "./ChatInput";
 
 import StarBorderOutlinedIcon from "@mui/icons-material/StarBorderOutlined";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
+
 
 const Chat = () => {
     const { channelId } = useParams();
@@ -55,10 +57,11 @@ const Chat = () => {
                     </div>
                 </div>
                 <div className="chat-messages">
-                    {channelMessages.map(({message, user, userImage, timestamp}) => (
-                        <Message message={message} user={user} userImage={userImage} timestamp={timestamp} />
+                    {channelMessages.map(({message, user, userImage, timestamp}, index) => (
+                        <Message message={message} user={user} userImage={userImage} timestamp={timestamp} key={index} />
                     ))}
                 </div>
+                <ChatInput channelName={channelDetails?.name} channelId={channelId} />
             </div>
         </>
     );
