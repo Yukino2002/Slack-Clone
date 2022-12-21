@@ -6,7 +6,7 @@ const Message = ({ message, user, userImage, timestamp }) => {
     return (
         <>
             <div className="message">
-                <img src={userImage} alt="userImage" />
+                <img src={userImage} alt="userImage" referrerpolicy="no-referrer" />
                 <div className="message-info">
                     <h4>
                         {user} {" "}

@@ -16,7 +16,8 @@ const Header = () => {
                 <div className="header-left">
                     <Avatar className="header_avatar"
                         alt={user?.displayName}
-                        src={user?.photoURL}
+                        src={user?.photoURL} 
+                        referrerpolicy="no-referrer"
                     />
                     <AccessTimeIcon />
                 </div>

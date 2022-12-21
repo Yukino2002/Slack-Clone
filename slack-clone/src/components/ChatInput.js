@@ -1,4 +1,3 @@
-import { Button } from "@mui/material";
 import React, { useState } from "react";
 import db from "../config/Firebase";
 
@@ -32,7 +31,7 @@ const ChatInput = ({ channelName, channelId }) => {
     return (
         <div className="chatInput">
             <form>
-                <input type="text" value={input} onChange={(e) => setInput(e.target.vaalue)} placeholder={`Message #${channelName}`} />
+                <input type="text" value={input} onChange={(e) => setInput(e.target.value)} placeholder={`Message #${channelName}`} />
                 <button type="submit" onClick={sendMessage}>SEND</button>
             </form>
         </div>
